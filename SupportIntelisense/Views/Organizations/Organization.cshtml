@@ -1,0 +1,50 @@
+﻿@model SupportIntelisense.Areas.Identity.ApplicationUser
+@{
+    ViewData["Title"] = "Organization";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="text-center">
+        <h3 class="text-muted">List Of Projects</h3>
+        <hr />
+    </div>
+<div class="container">
+    <input type="hidden" asp-for="@Model.Id" />
+</div>
+    <table class="table table-striped" id="gridOrganization">
+        <thead>
+            <tr>
+                <th>
+                   Sr No
+                </th>
+                <th>
+                   Name
+                </th>
+                <th>
+                   Discription
+                </th>
+                <th>
+                  Mention Date
+                </th>
+                <th> <a class="btn btn-outline-dark" onclick="ShowPopup('@Url.Action("AddEditOrganization","Organizations")')"><i class="fa fa-plus"></i> Add Project </a></th>
+            </tr>
+       </thead>
+    </table>
+        <!-- /.content -->
+        <!--modal placeholder-->
+        <div class="modal fade" id="modalDefault">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                </div>
+            </div>
+        </div>
+
+        @section Scripts{
+            @await Html.PartialAsync("_ValidationScriptsPartial")
+            <script src="~/js/views/config/index.js"></script>
+        }
+
+
+
+
+

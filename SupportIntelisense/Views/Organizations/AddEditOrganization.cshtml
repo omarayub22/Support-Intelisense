@@ -1,0 +1,53 @@
+﻿@model SupportIntelisense.Models.Organization
+@{
+    Layout = null;
+}
+        <div class="modal-header">
+            <p class="modal-title">Add / Edit Org/ Project</p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form onsubmit="return SubmitAddEdit(this)">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="OrganizationId" />
+                        <input type="hidden" asp-for="ApplicationUserId" />
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label asp-for="SrNo" class="control-label"></label>
+                                <input asp-for="SrNo" class="form-control form-control-sm" value="@ViewBag.SrNo" readonly />
+                                <span asp-validation-for="SrNo" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label asp-for="Name" class="control-label"></label>
+                                <input asp-for="Name" class="form-control form-control-sm" required />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label asp-for="Discription" class="control-label"></label>
+                                <input asp-for="Discription" class="form-control form-control-sm" />
+                                <span asp-validation-for="Discription" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label asp-for="MentionDate" class="control-label"></label>
+                                <input asp-for="MentionDate" class="form-control form-control-sm" required />
+                                <span asp-validation-for="MentionDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                         <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-save"></i>Submit</button>
+                            <button type="button" class="btn btn-outline-secondary pull-left" data-dismiss="modal">Cancel</button>
+                        </div>
+                     </div>
+            </form>
+        </div>
+<script>Ladda.bind('.btn', { timeout: 1000 });</script>
+
+
+
